@@ -97,5 +97,9 @@ namespace BallonDor.Services
             _context.Voters.Remove(voter);
             await _context.SaveChangesAsync();
         }
+        public interface IVoterService
+        {
+            Task<VoterDTO?> GetVoterByIdAsync(int id);
+        }
     }
 }

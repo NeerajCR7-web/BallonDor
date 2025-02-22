@@ -14,9 +14,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-// Register services
+// Register IPlayerService and PlayerService
 builder.Services.AddScoped<IPlayerService, PlayerService>();
+
+// Register ITournamentService and TournamentService
 builder.Services.AddScoped<IAwardService, AwardService>();
+
 builder.Services.AddScoped<IVoterService, VoterService>();
 
 // Add API controllers
@@ -40,6 +43,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -48,25 +52,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Enable authentication and authorization
-app.UseAuthentication();
 app.UseAuthorization();
-
-// Redirect unauthenticated users to the login page
-app.Use(async (context, next) =>
-{
-    var isAuthenticated = context.User.Identity?.IsAuthenticated ?? false;
-    var isLoginPage = context.Request.Path.StartsWithSegments("/Identity/Account/Login");
-    var isRegisterPage = context.Request.Path.StartsWithSegments("/Identity/Account/Register");
-
-    if (!isAuthenticated && !isLoginPage && !isRegisterPage)
-    {
-        context.Response.Redirect("/Identity/Account/Login");
-        return;
-    }
-
-    await next();
-});
 
 // Map API controllers
 app.MapControllers();
