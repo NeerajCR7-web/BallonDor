@@ -2,7 +2,107 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to BallonDor</h1>
+        <p class="lead">Your ultimate destination for football awards and player recognition.</p>
+        <a href="/Players" class="btn btn-primary btn-lg">Explore Players</a>
+        <a href="/Awards" class="btn btn-outline-secondary btn-lg">View Awards</a>
+    </div>
 </div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-trophy fa-3x text-primary"></i>
+            </div>
+            <h3 class="fw-bold">Awards</h3>
+            <p>Discover the most prestigious football awards and their winners.</p>
+            <a href="/Awards" class="btn btn-outline-primary">Learn More</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-users fa-3x text-success"></i>
+            </div>
+            <h3 class="fw-bold">Players</h3>
+            <p>Explore the profiles of top football players from around the world.</p>
+            <a href="/Players" class="btn btn-outline-success">Learn More</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="feature-icon mb-3">
+                <i class="fas fa-vote-yea fa-3x text-warning"></i>
+            </div>
+            <h3 class="fw-bold">Voters</h3>
+            <p>Meet the voters who decide the winners of the BallonDor awards.</p>
+            <a href="/Voters" class="btn btn-outline-warning">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="cta-section bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold">Ready to Explore?</h2>
+        <p class="lead">Join us and dive into the world of football excellence.</p>
+        <a href="/Players" class="btn btn-light btn-lg">Get Started</a>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-light py-4">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2025 BallonDor. All rights reserved.</p>
+        <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Your Team</p>
+    </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<!-- Custom CSS -->
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), url('/images/football-stadium.jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-section p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .feature-icon {
+        color: #007bff;
+    }
+
+    .cta-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), url('/images/football-ball.jpg') no-repeat center center;
+        background-size: cover;
+        padding: 80px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-section p {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        background-color: #f8f9fa;
+        color: #6c757d;
+    }
+</style>

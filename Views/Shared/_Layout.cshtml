@@ -7,6 +7,76 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BallonDor.styles.css" asp-append-version="true" />
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles for the header */
+        .navbar-brand {
+            font-size: 2.5rem; /* Big title */
+            font-weight: bold;
+            color: #007bff !important; /* Blue color for the title */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        .navbar {
+            padding: 1rem 0; /* Add padding to the navbar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to the navbar */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem; /* Slightly larger font size for navigation links */
+            font-weight: 500; /* Medium font weight */
+            color: #333 !important; /* Dark color for links */
+            margin: 0 10px; /* Add spacing between links */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #007bff !important; /* Blue color on hover */
+            }
+
+        .navbar-toggler {
+            border: none; /* Remove border from the toggler */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 123, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Custom toggler icon color */
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f8f9fa; /* Light background for the footer */
+            padding: 1rem 0; /* Add padding */
+            text-align: center; /* Center-align text */
+            font-size: 0.9rem; /* Smaller font size */
+            color: #6c757d; /* Gray color for text */
+        }
+
+            .footer a {
+                color: #007bff; /* Blue color for links */
+                text-decoration: none; /* Remove underline */
+            }
+
+                .footer a:hover {
+                    text-decoration: underline; /* Add underline on hover */
+                }
+
+        /* Main content area */
+        .container {
+            padding-top: 2rem; /* Add padding at the top */
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 2rem; /* Smaller title on mobile */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1rem; /* Smaller font size for mobile */
+                margin: 5px 0; /* Adjust spacing for mobile */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
