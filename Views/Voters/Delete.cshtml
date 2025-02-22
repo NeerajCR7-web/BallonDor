@@ -1,0 +1,26 @@
+﻿@model BallonDor.DTO.VoterDTO
+
+@{
+    ViewData["Title"] = "Delete Voter";
+}
+
+<h1>Delete Voter</h1>
+
+<h3>Are you sure you want to delete this voter?</h3>
+<div>
+    <h4>@Model.Name</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+        <dt class="col-sm-2">Country</dt>
+        <dd class="col-sm-10">@Model.Country</dd>
+        <dt class="col-sm-2">Role</dt>
+        <dd class="col-sm-10">@Model.Role</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VoterId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

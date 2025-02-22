@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BallonDor.DTO.AwardDTO>
+
+@{
+    ViewData["Title"] = "Awards";
+}
+
+<h1>Awards</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Description</th>
+            <th>Player</th>
+            <th>Voter</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Year</td>
+                <td>@item.Description</td>
+                <td>@item.PlayerId</td>
+                <td>@item.VoterId</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AwardId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AwardId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AwardId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

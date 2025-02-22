@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BallonDor.DTO.PlayerDTO>
+
+@{
+    ViewData["Title"] = "Players";
+}
+
+<h1>Players</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Nationality</th>
+            <th>Date of Birth</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Position</td>
+                <td>@item.Nationality</td>
+                <td>@item.DateOfBirth.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PlayerId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PlayerId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PlayerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
