@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -19,21 +19,21 @@ builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IAwardService, AwardService>();
 builder.Services.AddScoped<IVoterService, VoterService>();
 
-// Add API controllers
+// API controllers
 builder.Services.AddControllers();
 
-// Add Swagger (optional)
+// Swagger 
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure  HTTP request .
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
-    // Enable Swagger in development
+    // Swagger in development
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -48,11 +48,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Enable authentication and authorization
+//  authentication and authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Redirect unauthenticated users to the login page
+// unauthenticated users to the login page
 app.Use(async (context, next) =>
 {
     var isAuthenticated = context.User.Identity?.IsAuthenticated ?? false;
@@ -68,7 +68,7 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// Map API controllers
+// API controllers
 app.MapControllers();
 
 app.MapControllerRoute(
